@@ -5,20 +5,25 @@ import java.util.Stack;
 
 public class TestStack {
 
-    @org.junit.Before
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.After
-    public void tearDown() throws Exception {
+    @org.junit.Test
+    public void TestStackPush() {
+        Stack<String> stack = new Stack<>();
+        stack.push("Hello world");
+        assertEquals(false, stack.isEmpty());
     }
 
     @org.junit.Test
-    public void TestStack1() {
+    public void TestStackPeek() {
         Stack<String> stack = new Stack<>();
         stack.push("Hello world");
-        assertEquals(false, stack.isEmpty()); // false
+        assertEquals("Hello world", stack.peek());
     }
 
-    // Make a bigger test exercising more Stack methods.....
+    @org.junit.Test
+    public void TestStackPop() {
+        Stack<String> stack = new Stack<>();
+        stack.push("Hello world");
+        stack.push("World, hello");
+        assertEquals("World, hello", stack.pop());
+    }
 }
